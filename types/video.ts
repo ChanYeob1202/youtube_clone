@@ -1,9 +1,14 @@
 import { Timestamp } from "next/dist/server/lib/cache-handlers/types";
 
-export interface VideoTrend {
-  id:string;
+export interface SidebarItems {
+  name: string;
+  icon: string;
+}
+
+export interface VideoCardData {
+  id: string | { videoId: string };
   snippet: {
-    publishedAt: Timestamp;
+    publishedAt: string;
     channelId:string;
     title:string;
     description:string;
@@ -14,26 +19,29 @@ export interface VideoTrend {
     }
     channelTitle: string;
   }
+  statistics: {
+    viewCount:string
+  }
 }
 
-export interface SearchVideo {
-  id: {
-    videoId: string;
-  }
-  snippet:{
-    publishedAt: Timestamp;
-    channelId:string;
-    title:string;
-    description: string;
-    thumbnails: {
-      high: {
-        url: string
-      }
-    }
-    channelTitle: string;
-    liveBroadCastContent?: string;
-  }
-}
+// export interface SearchVideo {
+//   id: {
+//     videoId: string;
+//   }
+//   snippet:{
+//     publishedAt: Timestamp;
+//     channelId:string;
+//     title:string;
+//     description: string;
+//     thumbnails: {
+//       high: {
+//         url: string
+//       }
+//     }
+//     channelTitle: string;
+//     liveBroadCastContent?: string;
+//   }
+// }
 
 export interface Channel {
   id: string;
