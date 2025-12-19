@@ -1,16 +1,14 @@
-import React from 'react'
-import { youtubeApi } from '../api/youtubeApi'
+import { videoService } from "../services/videoService"
+import VideoCard from "../components/VideoCard"
 
 async function page() {
 
-  const newsDatas = await youtubeApi.getVideosByCateogry("25");
-  console.log(newsDatas);
+  const { videos, channels } = await videoService.getVideosByCategoryIds("25")
+  
 
 
   return (
-    <div>
-      
-    </div>
+    <VideoCard videos = {videos} channels = {channels}/>
   )
 }
 

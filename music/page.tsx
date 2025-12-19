@@ -1,12 +1,15 @@
-import { youtubeApi } from "../api/youtubeApi"
+import { videoService } from "../services/videoService"
+import VideoCard from "../components/VideoCard"
 
 async function page() {
-  const musicVideos = await youtubeApi.getVideosByCateogry("10")
+
+  const { videos, channels } = await videoService.getVideosByCategoryIds("10")
+  
+
 
   return (
-    <div>
-      
-    </div>
+    <VideoCard videos = {videos} channels = {channels}/>
+    
   )
 }
 

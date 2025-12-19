@@ -1,5 +1,6 @@
 import { SidebarItems } from "../types/video"
 import { MouseEvent } from "react";
+import Link from "next/link";
 
 const sidebarItems: SidebarItems[] = [
   { name: "movie", icon: "🎬"},
@@ -28,14 +29,15 @@ function Sidebar({isCollapsed}: SidebarProps) {
     >
       <nav>
         {sidebarItems.map(( item ) => (
-          <div 
+          <Link
+            href = {`/${item.name}` }
             key = {item.name}
             className = "flex p-2  rounded-lg  gap-2 items-center mb-4 transform transition-colors hover:cursor-pointer  hover:bg-gray-100 duration-100"
             onClick = {()=> handleItemClick}
             >
             <span>{item.icon}</span>
             { isCollapsed ?  null : <span className = "transition-transform duration-600 ">{item.name}</span>}
-          </div>
+          </Link>
         ))}
       </nav>
     </aside>

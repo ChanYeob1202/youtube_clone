@@ -24,25 +24,6 @@ export interface VideoCardData {
   }
 }
 
-// export interface SearchVideo {
-//   id: {
-//     videoId: string;
-//   }
-//   snippet:{
-//     publishedAt: Timestamp;
-//     channelId:string;
-//     title:string;
-//     description: string;
-//     thumbnails: {
-//       high: {
-//         url: string
-//       }
-//     }
-//     channelTitle: string;
-//     liveBroadCastContent?: string;
-//   }
-// }
-
 export interface Channel {
   id: string;
   snippet: {
@@ -59,4 +40,3 @@ export interface Channel {
     }
   }
 }
-
