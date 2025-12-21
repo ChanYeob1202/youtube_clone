@@ -11,7 +11,7 @@ interface VideoCardProps {
 function VideoCard( {videos, channels} : VideoCardProps) {
   return (
     <div className = "p-6">
-      <div className = "grid grid-cols-3 gap-4">
+      <div className = "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4">
             { videos.map((video) => {
               const videoId = typeof video.id === 'string' ? video.id : video.id.videoId;
               const channel = channels.find(ch => ch.id === video.snippet.channelId);
@@ -33,8 +33,8 @@ function VideoCard( {videos, channels} : VideoCardProps) {
                   <div className = "flex flex-flow">
                     {/* avatar */}
                     <img
-                    src={ channel?.snippet?.thumbnails?.default?.url}
-                    alt={video.snippet.channelTitle}
+                    src={ channel?.snippet?.thumbnails?.default?.url }
+                    alt={ video.snippet.channelTitle }
                     className = "w-9 h-9 rounded-full mr-2"
                     />
                     {/* channel name & title */}

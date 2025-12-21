@@ -18,6 +18,7 @@ export const youtubeApi = {
     )
     return response.json();
   },
+  
   searchVideos: async (searchQuery:string ,maxResults:number = 40)=> {
     // dynamic 
     const response = await fetch(
@@ -43,5 +44,12 @@ export const youtubeApi = {
       { next: { revalidate: 3600 }}
     )
     return response.json();
-  }
+  },
+
+  getRelatedVideos: async (searchQuery: string, maxResults: number = 20)=> {
+    const response = await fetch (
+      `${BASE_URL}/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&maxResults=20&key=${API_KEY}`
+    )
+    return response.json();
+  },
 }

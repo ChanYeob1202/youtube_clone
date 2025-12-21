@@ -9,7 +9,6 @@ async function page() {
 
   return (
     <VideoCard videos = {videos} channels = {channels}/>
-    
   )
 }
 

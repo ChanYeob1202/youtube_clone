@@ -39,4 +39,33 @@ export interface Channel {
       }
     }
   }
+  statistics?: {
+    subscriberCount: string; 
+  }
+}
+
+export interface VideoDetail {
+  id: string;
+  snippet: {
+    categoryId: string;
+    channelId: string;
+    channelTitle: string;
+    description: string;
+    publishedAt:string;
+    tags?:string[]
+    thumbnails: {
+      default?: {
+        url: string;
+      }
+      high?: {
+        url: string; 
+      }
+    }
+    title: string;
+  }
+  statistics: {
+    viewCount: string;
+    likeCount?: string;
+    commentCount?: string;
+  }
 }
