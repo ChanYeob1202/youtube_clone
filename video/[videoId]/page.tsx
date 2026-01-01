@@ -39,7 +39,6 @@ function Page() {
         setRelatedChannels(channels);
       }
     }
-    
     fetchVideoDetails();
   }, [videoId])
   
@@ -67,7 +66,6 @@ function Page() {
       <div className = "flex flex-col flex-1 ml-4">
         {/* video list */}
         <RelatedVideo relatedVideos={relatedVideos}/>
-        
       </div>
     </div>
   )
